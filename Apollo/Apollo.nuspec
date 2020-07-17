@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Apollo.Config.Client</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>Samuel</authors>
+    <owners>Mistong, Samuel</owners>
+    <!--<licenseUrl></licenseUrl>-->
+    <!--<projectUrl></projectUrl>-->
+    <!--<iconUrl></iconUrl>-->
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>适配后的 Apollo 配置中心客户端</description>
+    <releaseNotes>修复本地缓存路径配置，优化默认配置.</releaseNotes>
+    <copyright>Copyright 2019</copyright>
+    <tags>Apollo Config Client</tags>
+  </metadata>
+</package>

@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B231A39E-9D8A-4F63-9DFF-4FB7B5A900AB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Com.Ctrip.Framework.Apollo</RootNamespace>
+    <AssemblyName>Framework.Apollo.Client</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Framework.Apollo.Client.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApolloConfigNameSpacesSection.cs" />
+    <Compile Include="ConfigExtension.cs" />
+    <Compile Include="IConfig.cs" />
+    <Compile Include="ConfigService.cs" />
+    <Compile Include="ApolloConfigSection.cs" />
+    <Compile Include="Core\Apollo.cs" />
+    <Compile Include="Core\ConfigConsts.cs" />
+    <Compile Include="Core\Dto\ApolloConfig.cs" />
+    <Compile Include="Core\Dto\ApolloConfigNotification.cs" />
+    <Compile Include="Core\Dto\ApolloNotificationMessages.cs" />
+    <Compile Include="Core\Dto\ServiceDTO.cs" />
+    <Compile Include="Core\Ioc\Adapters\Lifetime\AdapterLifetime.cs" />
+    <Compile Include="Core\Ioc\Adapters\Lifetime\ILifetime.cs" />
+    <Compile Include="Core\Ioc\Adapters\Lifetime\PerContainerLifetime.cs" />
+    <Compile Include="Core\Ioc\Adapters\Lifetime\PerLookupLifetime.cs" />
+    <Compile Include="Core\Ioc\Extensions\Annotation\AnnotatedConstructorDependencySelector.cs" />
+    <Compile Include="Core\Ioc\Extensions\Annotation\AnnotatedConstructorSelector.cs" />
+    <Compile Include="Core\Ioc\Extensions\Annotation\AnnotatedFieldDependencySelector.cs" />
+    <Compile Include="Core\Ioc\Extensions\Annotation\AnnotatedPropertyDependencySelector.cs" />
+    <Compile Include="Core\Ioc\Extensions\Annotation\AutoRegistration\AssemblyScanner.cs" />
+    <Compile Include="Core\Ioc\Extensions\Annotation\AutoRegistration\NamedAttribute.cs" />
+    <Compile Include="Core\Ioc\Extensions\Annotation\AutoRegistration\NamedTypeExtractor.cs" />
+    <Compile Include="Core\Ioc\Extensions\Annotation\InjectAttribute.cs" />
+    <Compile Include="Core\Ioc\Extensions\Annotation\InjectConstructorAttribute.cs" />
+    <Compile Include="Core\Ioc\Interfaces\IContainable.cs" />
+    <Compile Include="Core\Ioc\Interfaces\IInitializable.cs" />
+    <Compile Include="Core\Ioc\Interfaces\ILoggable.cs" />
+    <Compile Include="Core\Ioc\Interfaces\ILogger.cs" />
+    <Compile Include="Core\Ioc\IVenusContainer.cs" />
+    <Compile Include="Core\Ioc\LightInject\LightInject.cs" />
+    <Compile Include="Core\Ioc\Utility\NamespaceList.cs" />
+    <Compile Include="Core\Ioc\VenusContainer.cs" />
+    <Compile Include="Core\Ioc\VenusContainerLoader.cs" />
+    <Compile Include="Core\MetaDomainConsts.cs" />
+    <Compile Include="Core\Schedule\ExponentialSchedulePolicy.cs" />
+    <Compile Include="Core\Schedule\ISchedulePolicy.cs" />
+    <Compile Include="Core\Utils\CollectionUtil.cs" />
+    <Compile Include="Core\Utils\ComponentLocator.cs" />
+    <Compile Include="Core\Utils\DNSUtil.cs" />
+    <Compile Include="Core\Utils\JSON.cs" />
+    <Compile Include="Core\Utils\Local.cs" />
+    <Compile Include="Core\Utils\Pair.cs" />
+    <Compile Include="Core\Utils\Properties.cs" />
+    <Compile Include="Core\Utils\ThreadSafe.cs" />
+    <Compile Include="Core\Utils\WebRequestExtension.cs" />
+    <Compile Include="Enums\ConfigFileFormat.cs" />
+    <Compile Include="Enums\Env.cs" />
+    <Compile Include="Enums\PropertyChangeType.cs" />
+    <Compile Include="Exceptions\ApolloConfigException.cs" />
+    <Compile Include="Exceptions\ApolloConfigStatusCodeException.cs" />
+    <Compile Include="Foundation\Foundation.cs" />
+    <Compile Include="Foundation\Internals\DefaultProviderManager.cs" />
+    <Compile Include="Foundation\Internals\NetworkInterfaceManager.cs" />
+    <Compile Include="Foundation\Internals\NullProviderManager.cs" />
+    <Compile Include="Foundation\Internals\Provider\DefaultApplicationProvider.cs" />
+    <Compile Include="Foundation\Internals\Provider\DefaultNetworkProvider.cs" />
+    <Compile Include="Foundation\Internals\Provider\DefaultServerProvider.cs" />
+    <Compile Include="Foundation\Internals\Provider\NullProvider.cs" />
+    <Compile Include="Foundation\Internals\Utils.cs" />
+    <Compile Include="Foundation\Spi\IProviderManager.cs" />
+    <Compile Include="Foundation\Spi\Provider\IApplicationProvider.cs" />
+    <Compile Include="Foundation\Spi\Provider\INetworkProvider.cs" />
+    <Compile Include="Foundation\Spi\Provider\IProvider.cs" />
+    <Compile Include="Foundation\Spi\Provider\IServerProvider.cs" />
+    <Compile Include="Internals\AbstractConfig.cs" />
+    <Compile Include="Internals\AbstractConfigRepository.cs" />
+    <Compile Include="Internals\IConfigManager.cs" />
+    <Compile Include="Internals\IConfigRepository.cs" />
+    <Compile Include="Internals\ConfigServiceLocator.cs" />
+    <Compile Include="Internals\DefaultConfig.cs" />
+    <Compile Include="Internals\DefaultConfigManager.cs" />
+    <Compile Include="Internals\LocalFileConfigRepository.cs" />
+    <Compile Include="Internals\RemoteConfigLongPollService.cs" />
+    <Compile Include="Internals\RemoteConfigRepository.cs" />
+    <Compile Include="Internals\IRepositoryChangeListener.cs" />
+    <Compile Include="Logging\Internals\DefaultLogger.cs" />
+    <Compile Include="Logging\LogManager.cs" />
+    <Compile Include="Logging\Spi\ILog.cs" />
+    <Compile Include="Model\ConfigChange.cs" />
+    <Compile Include="Model\ConfigChangeEventArgs.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SmartThreadPool\CallerThreadContext.cs" />
+    <Compile Include="SmartThreadPool\CanceledWorkItemsGroup.cs" />
+    <Compile Include="SmartThreadPool\EventWaitHandle.cs" />
+    <Compile Include="SmartThreadPool\EventWaitHandleFactory.cs" />
+    <Compile Include="SmartThreadPool\Exceptions.cs" />
+    <Compile Include="SmartThreadPool\Interfaces.cs" />
+    <Compile Include="SmartThreadPool\InternalInterfaces.cs" />
+    <Compile Include="SmartThreadPool\PriorityQueue.cs" />
+    <Compile Include="SmartThreadPool\SLExt.cs" />
+    <Compile Include="SmartThreadPool\SmartThreadPool.cs" />
+    <Compile Include="SmartThreadPool\SmartThreadPool.ThreadEntry.cs" />
+    <Compile Include="SmartThreadPool\STPEventWaitHandle.cs" />
+    <Compile Include="SmartThreadPool\STPPerformanceCounter.cs" />
+    <Compile Include="SmartThreadPool\STPStartInfo.cs" />
+    <Compile Include="SmartThreadPool\SynchronizedDictionary.cs" />
+    <Compile Include="SmartThreadPool\WIGStartInfo.cs" />
+    <Compile Include="SmartThreadPool\WorkItem.cs" />
+    <Compile Include="SmartThreadPool\WorkItem.WorkItemResult.cs" />
+    <Compile Include="SmartThreadPool\WorkItemFactory.cs" />
+    <Compile Include="SmartThreadPool\WorkItemInfo.cs" />
+    <Compile Include="SmartThreadPool\WorkItemResultTWrapper.cs" />
+    <Compile Include="SmartThreadPool\WorkItemsGroup.cs" />
+    <Compile Include="SmartThreadPool\WorkItemsGroupBase.cs" />
+    <Compile Include="SmartThreadPool\WorkItemsQueue.cs" />
+    <Compile Include="Spi\IConfigFactory.cs" />
+    <Compile Include="Spi\IConfigFactoryManager.cs" />
+    <Compile Include="Spi\IConfigRegistry.cs" />
+    <Compile Include="Spi\DefaultConfigFactory.cs" />
+    <Compile Include="Spi\DefaultConfigFactoryManager.cs" />
+    <Compile Include="Spi\DefaultConfigRegistry.cs" />
+    <Compile Include="Util\ConfigUtil.cs" />
+    <Compile Include="Util\EnvUtils.cs" />
+    <Compile Include="Util\ExceptionUtil.cs" />
+    <Compile Include="Util\Http\HttpRequest.cs" />
+    <Compile Include="Util\Http\HttpResponse.cs" />
+    <Compile Include="Util\Http\HttpUtil.cs" />
+    <Compile Include="Util\ThreadPoolUtil.cs" />
+    <Compile Include="VenusBuild\ComponentsConfigurator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="VenusIoc.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Apollo.nuspec" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
